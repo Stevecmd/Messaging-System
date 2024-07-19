@@ -1,7 +1,11 @@
 # Messaging System with RabbitMQ/Celery and Python Application behind Nginx
 
 ## Introduction
-This project aims to deploy a Python application behind Nginx that interacts with RabbitMQ/Celery for email sending and logging functionality. The application is a Flask-based web application that sends emails asynchronously using Celery and logs messages to a file. The application also uses Nginx as a reverse proxy and Ngrok for exposing the local server to the internet.
+This project aims to deploy a Python application behind Nginx that interacts with RabbitMQ/Celery for email sending and logging functionality. The application is a Flask-based web application that sends emails asynchronously using Celery and logs messages to a file. The application also uses Nginx as a reverse proxy and Ngrok for exposing the local server to the internet. <br />
+
+**RabbitMQ** is a message broker that enables applications to communicate with each other by sending and receiving messages. <br />
+**Celery** is a distributed task queue that allows you to run tasks asynchronously. <br />
+**Nginx** is a web server that can also be used as a reverse proxy, load balancer, and HTTP cache.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -54,6 +58,21 @@ This project aims to deploy a Python application behind Nginx that interacts wit
 - SSL setup for secure communication.
 
 ### Prerequisites
+#### RabbitMQ and Celery
+- Install RabbitMQ and Celery on your local machine.
+
+#### Python Application
+- Set up a Python application with the following functionalities:
+    - An endpoint that can accept two parameters: `?sendmail` and `?talktome`.
+
+#### Nginx
+- Configure Nginx to serve your Python application.
+
+#### Ngrok
+- Use Ngrok or a similar tool to expose your local application endpoint for external access.
+<br />
+Below are all the dependencies to be put in `requirements.txt` so as to be installed altogether:
+
 ```sh
 Python 3.10
 Flask
@@ -211,6 +230,10 @@ To get your username
 - whoami
 - $USER
 ```
+Troubleshooting:
+
+- If you encounter permission errors, ensure that the log file has the correct ownership and permissions.
+- Check the Nginx error logs for any issues related to logging.
 
 ## Contributing
 Guidelines for contributing to the project.
@@ -221,7 +244,17 @@ Guidelines for contributing to the project.
 4. Push to the branch (git push origin feature-branch)
 5. Open a Pull Request
 
-## License
-Include the license information for the project.
+**Coding Standards**:
+- Follow PEP 8 for Python code.
+- Write clear and concise commit messages.
+- Include comments and documentation for your code.
 
+**Guidelines**:
+- Ensure your code passes all tests before submitting a pull request.
+- Provide a detailed description of your changes in the pull request.
+
+## License
 This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the LICENSE file for details.
+
+**Summary**:
+The GNU General Public License is a free, copyleft license for software and other kinds of works. It guarantees end users the freedom to run, study, share, and modify the software.
